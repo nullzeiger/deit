@@ -1,3 +1,6 @@
+// Copyright (c) Ivan Guerreschi. All rights reserved.
+// Licensed under the MIT License. See LICENSE in the project root for license information.
+
 use std::collections::HashMap;
 use std::io;
 use std::process::exit;
@@ -33,9 +36,9 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
-        let guess = guess.trim().to_lowercase();
+        let guess = guess.trim();
 
-        if guess.as_str() == "q" {
+        if guess == "q" {
             exit(0)
         }
 
