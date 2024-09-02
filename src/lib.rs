@@ -58,4 +58,20 @@ pub mod verb {
             }
         }
     }
+
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+        use std::collections::HashMap;
+
+        #[test]
+        fn test_guess_verb() {
+            let verbs = HashMap::from([("werden", "diventare")]);
+            let key = "werden";
+            let guess = "diventare";
+            let result = guess_verb(key, guess, &verbs);
+            let want = true;
+            assert_eq!(result, want);
+        }
+    }
 }
